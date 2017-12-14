@@ -31,10 +31,11 @@ gem 'jbuilder', '~> 2.5'
 
 ## Added application gems ##
 gem 'mongoid', '~>6.1.0'
-gem 'semantic-ui-sass'
 gem 'devise'
 gem 'jquery-rails'
-gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem "chartkick"
+gem 'groupdate'
+gem 'react_on_rails', '10.0.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

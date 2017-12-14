@@ -1,5 +1,6 @@
 class User
   include Mongoid::Document
+  include Mongoid::Timestamps
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -24,8 +25,9 @@ class User
   field :last_sign_in_ip,    type: String
 
   field :name, type: String, default: ""
-  field :gender
-  field :phone
+  field :gender, type: String
+  field :phone, type: String
+  field :country, type: String
   validates_uniqueness_of :name, :email, :case_sensitive => false
 
   ## Confirmable
