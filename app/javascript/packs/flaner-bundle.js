@@ -1,0 +1,9 @@
+import ReactOnRails from 'react-on-rails';
+
+import TotalChart from '../bundles/Charts/components/Total';
+import SalesChart from '../bundles/Charts/components/Sales';
+
+// This is how react_on_rails can see the HelloWorld in the browser.
+ReactOnRails.register({
+  TotalChart, SalesChart
+});

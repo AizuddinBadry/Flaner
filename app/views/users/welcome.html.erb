@@ -8,9 +8,9 @@
 				<div class="gradient-detail">
 					<div class="widget-detail">
 						<h3>372</h3>
-						<span>New &amp; Latest Users</span>
+						<span>Jumlah Ejen</span>
 					</div>
-					<a href="#" class="gr-btn" title="View More">More Info</a>
+					<a href="#" class="gr-btn" title="View More">Maklumat Lanjut</a>
 				</div>
 			</div>
 		</div>
@@ -24,9 +24,9 @@
 				<div class="gradient-detail">
 					<div class="widget-detail">
 						<h3>512</h3>
-						<span>Happy Customer</span>
+						<span>Jumlah Pelanggan</span>
 					</div>
-					<a href="#" class="gr-btn" title="View More">More Info</a>
+					<a href="#" class="gr-btn" title="View More">Maklumat Lanjut</a>
 				</div>
 			</div>
 		</div>
@@ -40,9 +40,9 @@
 				<div class="gradient-detail">
 					<div class="widget-detail">
 						<h3>740</h3>
-						<span>Total Sales</span>
+						<span>Jumlah Borang</span>
 					</div>
-					<a href="#" class="gr-btn" title="View More">More Info</a>
+					<a href="#" class="gr-btn" title="View More">Maklumat Lanjut</a>
 				</div>
 			</div>
 		</div>
@@ -56,16 +56,77 @@
 				<div class="gradient-detail">
 					<div class="widget-detail">
 						<h3>480</h3>
-						<span>World Award</span>
+						<span>Jumlah Jualan</span>
 					</div>
-					<a href="#" class="gr-btn" title="View More">More Info</a>
+					<a href="#" class="gr-btn" title="View More">Maklumat Lanjut</a>
 				</div>
 			</div>
 		</div>
+	</div>	
+</div>
+<div class="row">
+	<div class="col-md-8 col-sm-12">
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title m-b-0">Graf Jualan ( bulanan )</h4>
+			</div>
+			<div class="card-body">
+				<%= react_component("SalesChart", prerender: false) %>
+				<center><h4>Jumlah : RM</h4></center>
+			</div>
+		</div>
 	</div>
-	<div class="col-md-3 col-sm-6">
-		<%= react_component("SalesChart", prerender: false) %>
+	<div class="col-md-4 col-sm-12">
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title m-b-0">Graf Keseluruhan</h4>
+			</div>
+			<div class="card-body">
+				<%= react_component("TotalChart", prerender: false) %>
+			</div>
+		</div>
 	</div>
-
-	
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title m-b-0">Carta Top 10 Ejen</h4>
+			</div>
+			<div class="card-body">
+				<div class="table-responsive"> 
+					<div class="table-responsive"> 
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Nama</th>
+									<th>Jenis Ejen</th>
+									<th>Bil. Jualan</th>
+									<th>Jumlah Jualan (RM)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>109</td>
+									<td>John</td>
+									<th><span class="label label-success">Affiliate</span></th>
+									<td>30</td>
+									<td>5000</td>
+								</tr>
+								<tr>
+									<td>211</td>
+									<td>Peter</td>
+									<th><span class="label label-warning">Dropship</span></th>
+									<td>5</td>
+									<td>1200</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
 </div>

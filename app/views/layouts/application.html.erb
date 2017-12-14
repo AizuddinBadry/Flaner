@@ -6,7 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'hello-world-bundle' %>
+    <%= javascript_pack_tag 'flaner-bundle' %>
   </head>
 
   <body>
@@ -29,7 +29,7 @@
 					<li>
 					<a class="menu-brand">
 						<% if user_signed_in? %>
-							<span style="color:white">Welcome, <%= @user.name %></span>
+							<span style="color:white">Selamat Datang, <%= @user.name %></span>
 						<% end %>
 					</a>
 					</li>
@@ -39,16 +39,51 @@
 
 					<div class="sidebar-nav navbar-collapse">
 						<ul class="nav" id="side-menu">
-						   <li>
+						   <li style="font-size: 20px;">
 						   <%= link_to user_root_path do %>
-									<i class="fa fa-bullseye"></i>
+									<i class="fa fa-dashboard" style="font-size: 20px"></i>
 										Dashboard 
 								<% end %>
 							</li>
 
-							<li>
+							<li style="font-size: 20px;">
+						   <%= link_to user_root_path do %>
+									<i class="fa fa-cart-plus" style="font-size: 20px"></i>
+										Produk 
+								<% end %>
+							</li>
+
+							<li style="font-size: 20px;">
+						   <%= link_to user_root_path do %>
+									<i class="fa fa-wpforms" style="font-size: 20px"></i>
+										Borang 
+								<% end %>
+							</li>
+
+							<li style="font-size: 20px;">
+						   <%= link_to user_root_path do %>
+									<i class="fa fa-users" style="font-size: 20px"></i>
+										Ejen 
+								<% end %>
+							</li>
+
+							<li style="font-size: 20px;">
+						   <%= link_to user_root_path do %>
+									<i class="fa fa-database" style="font-size: 20px"></i>
+										CRM 
+								<% end %>
+							</li>
+
+							<li style="font-size: 20px;">
+						   <%= link_to user_root_path do %>
+									<i class="fa fa-tasks" style="font-size: 20px"></i>
+										Transaksi 
+								<% end %>
+							</li>
+
+							<li style="font-size: 20px;">
 								<%= link_to destroy_user_session_path, :method => :delete  do %>
-									<i class="fa fa-power-off"></i>
+									<i class="fa fa-power-off" style="font-size: 20px"></i>
 										Logout 
 								<% end %>
 							</li>

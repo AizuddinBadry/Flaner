@@ -37,6 +37,7 @@ gem "chartkick"
 gem 'groupdate'
 gem 'react_on_rails', '10.0.2'
 gem "webpacker", "~> 3.0"
+gem 'jquery-datatables-rails', '~> 3.4.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
