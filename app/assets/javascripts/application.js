@@ -12,9 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require dataTables/jquery.dataTables
-//= require dataTables/jquery.dataTables.foundation
-//= require turbolinks
+//= require rails-ujs
 //= require_tree .
-//= require Chart.bundle
-//= require chartkick

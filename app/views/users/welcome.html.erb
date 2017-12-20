@@ -1,132 +1,98 @@
-<div class="row">
-	<div class="col-md-3 col-sm-6">
-		<div class="widget gradient-widget">
-			<div class="widget-caption gradient-danger">
-				<div class="gradient-icon gr-icon-danger">
-					<i class="icon icon-profile-male"></i>
-				</div>
-				<div class="gradient-detail">
-					<div class="widget-detail">
-						<h3>372</h3>
-						<span>Jumlah Ejen</span>
-					</div>
-					<a href="#" class="gr-btn" title="View More">Maklumat Lanjut</a>
-				</div>
-			</div>
-		</div>
+<div class="row page-title clearfix">
+            <div class="page-title-left">
+                <h6 class="page-title-heading mr-0 mr-r-5">Dashboard</h6>
+                <p class="page-title-description mr-0 d-none d-md-inline-block">company overview</p>
+            </div>
+        </div>
+<div class="widget-list row">
+    <div class="widget-holder widget-full-content widget-full-height col-md-6">
+        <div class="widget-bg" style="height: 280px">
+            <div class="widget-body">
+                <div class="counter-gradient">
+                    <h3 class="fs-60 fw-600 mt-3 pt-1 h1 letter-spacing-minus"><span class="counter">RM6843.00</span></h3>
+                    <h5 class="mb-4 fw-500">Transaction Value</h5>
+                </div>
+                <!-- /.widget-counter -->
+                <div class="row columns-border-bw border-top">
+                </div>
+            </div>
+            <!-- /.widget-body -->
+        </div>
+        <div class="row">
+		   <div class="widget-holder widget-sm widget-border-radius col-md-6">
+	        <div class="widget-bg" style="height: 170px">
+	            <div class="widget-heading bg-purple"><span class="widget-title my-0 color-white fs-12 fw-600">Agent Earnings</span>  <i class="widget-heading-icon feather feather-box"></i>
+	            </div>
+	            <!-- /.widget-heading -->
+	            <div class="widget-body">
+	                <div class="counter-w-info">
+	                    <div class="counter-title color-color-scheme">RM<span class="counter">500</span></div>
+	                    <!-- /.counter-title -->
+	                    <div class="counter-info">Earning from agent sales</div>
+	                    <!-- /.counter-info -->
+	                </div>
+	                <!-- /.counter-w-info -->
+	            </div>
+	            <!-- /.widget-body -->
+	        </div>
+	        <!-- /.widget-bg -->
+	    </div>
+	    <!-- /.widget-holder -->
+	    <div class="widget-holder widget-sm widget-border-radius col-md-6">
+	        <div class="widget-bg" style="height: 170px">
+	            <div class="widget-heading bg-purple"><span class="widget-title my-0 color-white fs-12 fw-600">Direct Earnings</span>  <i class="widget-heading-icon feather feather-briefcase"></i>
+	            </div>
+	            <!-- /.widget-heading -->
+	            <div class="widget-body">
+	                <div class="counter-w-info">
+	                    <div class="counter-title color-purple">RM<span class="counter">846</span>
+	                    </div>
+	                    <!-- /.counter-title -->
+	                    <div class="counter-info">Earning from direct sales</div>
+	                    <!-- /.counter-info -->
+	                </div>
+	                <!-- /.counter-w-info -->
+	            </div>
+	            <!-- /.widget-body -->
+	        </div>
+	        <!-- /.widget-bg -->
+	    </div>
 	</div>
-	<div class="col-md-3 col-sm-6">
-		<div class="widget gradient-widget">
-			<div class="widget-caption gradient-info">
-				<div class="gradient-icon gr-icon-info">
-					<i class="icon icon-happy"></i>
-				</div>
-				<div class="gradient-detail">
-					<div class="widget-detail">
-						<h3>512</h3>
-						<span>Jumlah Pelanggan</span>
-					</div>
-					<a href="#" class="gr-btn" title="View More">Maklumat Lanjut</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-3 col-sm-6">
-		<div class="widget gradient-widget">
-			<div class="widget-caption gradient-purple">
-				<div class="gradient-icon gr-icon-purple">
-					<i class="icon icon-basket"></i>
-				</div>
-				<div class="gradient-detail">
-					<div class="widget-detail">
-						<h3>740</h3>
-						<span>Jumlah Borang</span>
-					</div>
-					<a href="#" class="gr-btn" title="View More">Maklumat Lanjut</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-3 col-sm-6">
-		<div class="widget gradient-widget">
-			<div class="widget-caption gradient-success">
-				<div class="gradient-icon gr-icon-success">
-					<i class="icon icon-trophy"></i>
-				</div>
-				<div class="gradient-detail">
-					<div class="widget-detail">
-						<h3>480</h3>
-						<span>Jumlah Jualan</span>
-					</div>
-					<a href="#" class="gr-btn" title="View More">Maklumat Lanjut</a>
-				</div>
-			</div>
-		</div>
-	</div>	
+    </div>
+    <!-- /.widget-holder -->
+    <div class="widget-holder widget-full-height widget-flex col-md-6">
+        <div class="widget-bg" style="height: 450px">
+            <div class="widget-heading">
+                <h4 class="widget-title"><small class="h5 ml-1 my-0 fw-500">Agent & Customer</small></h4>
+                <!-- /.widget-graph-info -->
+            </div>
+            <!-- /.widget-heading -->
+            <div class="widget-body">
+                <div class="mr-t-20 flex-1">
+                    <div class="h-100" style="max-height: 250px">
+                        <%= react_component("TotalChart", prerender: false) %>
+                    </div>
+                </div>
+            </div>
+            <!-- /.widget-body -->
+        </div>
+        <!-- /.widget-bg -->
+    </div>
+    <!-- /.widget-holder -->
 </div>
+
 <div class="row">
-	<div class="col-md-8 col-sm-12">
-		<div class="card">
-			<div class="card-header">
-				<h4 class="card-title m-b-0">Graf Jualan ( bulanan )</h4>
-			</div>
-			<div class="card-body">
-				<%= react_component("SalesChart", prerender: false) %>
+		<div class="widget-holder widget-sm widget-border-radius col-md-12">
+	        <div class="widget-bg">
+	            <div class="widget-heading bg-purple"><span class="widget-title my-0 color-white fs-12 fw-600">Sales Statistic ( Monthly )</span>
+	            </div>
+	            <!-- /.widget-heading -->
+	            <div class="widget-body">
+	            	<%= react_component("SalesChart", prerender: false) %>
 				<center><h4>Jumlah : RM</h4></center>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-4 col-sm-12">
-		<div class="card">
-			<div class="card-header">
-				<h4 class="card-title m-b-0">Graf Keseluruhan</h4>
-			</div>
-			<div class="card-body">
-				<%= react_component("TotalChart", prerender: false) %>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="row">
-	<div class="col-md-12">
-		<div class="card">
-			<div class="card-header">
-				<h4 class="card-title m-b-0">Carta Top 10 Ejen</h4>
-			</div>
-			<div class="card-body">
-				<div class="table-responsive"> 
-					<div class="table-responsive"> 
-						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th>ID</th>
-									<th>Nama</th>
-									<th>Jenis Ejen</th>
-									<th>Bil. Jualan</th>
-									<th>Jumlah Jualan (RM)</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>109</td>
-									<td>John</td>
-									<th><span class="label label-success">Affiliate</span></th>
-									<td>30</td>
-									<td>5000</td>
-								</tr>
-								<tr>
-									<td>211</td>
-									<td>Peter</td>
-									<th><span class="label label-warning">Dropship</span></th>
-									<td>5</td>
-									<td>1200</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-	</div>
+	            </div>
+	            <!-- /.widget-body -->
+	        </div>
+	        <!-- /.widget-bg -->
+	    </div>
 </div>

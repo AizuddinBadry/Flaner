@@ -33,12 +33,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'mongoid', '~>6.1.0'
 gem 'devise'
 gem 'jquery-rails'
-gem "chartkick"
-gem 'groupdate'
 gem 'react_on_rails', '10.0.2'
 gem "webpacker", "~> 3.0"
-gem 'jquery-datatables-rails', '~> 3.4.0'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
