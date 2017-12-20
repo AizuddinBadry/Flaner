@@ -1,0 +1,112 @@
+<div class="row page-title clearfix">
+    <div class="page-title-left">
+        <h6 class="page-title-heading mr-0 mr-r-5">Create New Products</h6>
+    </div>
+</div>
+
+<div class="widget-holder widget-sm widget-border-radius col-md-12">
+    <div class="widget-bg">
+        <div class="widget-heading bg-purple"><span class="widget-title my-0 color-white fs-12 fw-600">New Product Details</span>  <i class="widget-heading-icon feather feather-box"></i>
+        </div>
+        <div class="widget-body">
+   		<div class="widget-body clearfix">
+   		<%= form_for :product, :class => 'has-validation-callback' do |f| %>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="l30">Product Code</label>
+                            <%= f.text_field :product_code, :class => 'form-control', :style => 'width:150px' %>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                       <div class="form-group">
+                            <label for="l30">Name</label>
+                            <%= f.text_field :name, :class => 'form-control' %>
+                        </div>
+                    </div>
+                     <div class="col-lg-12">
+                       <div class="form-group">
+                            <label for="l30">Description</label>
+                            <%= f.text_field :description, :class => 'form-control' %>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+	                    <div class="form-group">
+	                        <label class="col-md-3 col-form-label" for="l13">Product Type</label>
+	                        <div class="col-md-9">
+	                        <%= f.select :type, [['Services', 'services'], ['Items', 'items']], {}, {class: "form-control", :style => 'width:150px'}%>
+	                        </div>
+	                    </div>
+                    </div>
+                     <div class="col-lg-12">
+	                    <div class="form-group" id="stock">
+	                        <label for="l30">Stock</label>
+	                        <input class="form-control" id="l30" type="text" style="width: 150px;">
+	                        <small class="text-muted">Type "-0" for unlimited</small>
+	                    </div>
+                    </div>
+                    <div class="col-lg-12">
+	                    <div class="row">
+	                    <div class="col-md-3">
+	                    	<div class="form-group">
+		                        <label for="l30">Price (RM)</label>
+		                        <input class="form-control" id="l30" type="text" style="width: 150px;">
+		                    </div>
+	                    </div>
+	                    <div class="col-md-2">
+	                    	<div class="form-group">
+		                        <label for="l30">Agent Comission (RM)</label>
+		                        <input class="form-control" id="l30" type="text" style="width: 150px;">
+		                    </div>
+	                    </div>
+	                    </div>   
+                    </div>
+                    <div class="col-md-12">
+	                    <div class="form-group">
+	                    	<div class="checkbox checkbox-circle checkbox-color-scheme">
+	                            <label class="checkbox-checked">
+	                                <input type="checkbox" id="partialPayment"> <span class="label-text">Partial Payment ?</span>
+	                            </label>
+	                        </div>
+	                    </div>
+	                    <div class="form-group" id="partialPrice">
+	                        <label for="l30">Partial Price (RM)</label>
+	                        <input class="form-control" type="text" style="width: 150px;">
+	                    </div>
+                    </div>
+                </div>
+                <div class="form-actions btn-list">
+                    <button class="btn btn-primary" type="button">Save</button>
+                    <button class="btn btn-outline-default" type="button">Cancel</button>
+                </div>
+            <% end %>
+        </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+	(function() {
+
+	   $('#stock').hide()
+	   $('#partialPrice').hide()
+
+	  $('#product_type').change(function() {
+		  if($(this).val() == 'items'){
+		  	$('#stock').show()
+		  } else{
+		  	$('#stock').hide()
+		  }
+		});  
+
+	  var ckbox = $('#partialPayment');
+
+	    $('input#partialPayment').on('click',function () {
+	        if (ckbox.is(':checked')) {
+	            $('#partialPrice').show()
+	        } else {
+	            $('#partialPrice').hide()
+	        }
+	    });
+
+	})();
+</script>
