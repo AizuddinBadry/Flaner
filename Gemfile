@@ -35,6 +35,8 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'react_on_rails', '10.0.2'
 gem "webpacker", "~> 3.0"
+gem 'kaminari'
+gem 'kaminari-mongoid'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

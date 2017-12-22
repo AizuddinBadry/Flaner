@@ -5,16 +5,19 @@ const data = {
 	labels: [
 		'Customer',
 		'Agent',
+		'Product'
 	],
 	datasets: [{
-		data: [50, 100],
+		data: [50, 100, 30],
 		backgroundColor: [
 		'#36A2EB',
-		'#07A2AA'
+		'#07A2AA',
+		'#F4D03F'
 		],
 		hoverBackgroundColor: [
 		'#36A2EB',
-		'#07A2AA'
+		'#07A2AA',
+		'#F4D03F'
 		]
 	}]
 };

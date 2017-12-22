@@ -1,0 +1,113 @@
+<div class="row page-title clearfix">
+    <div class="page-title-left">
+        <h6 class="page-title-heading mr-0 mr-r-5">Product Overview</h6>
+    </div>
+</div>
+
+<div class="widget-holder widget-sm widget-border-radius col-md-12">
+    <div class="widget-bg">
+        <div class="widget-heading bg-purple"><span class="widget-title my-0 color-white fs-12 fw-600">Product List</span>  <i class="widget-heading-icon feather feather-box"></i>
+        </div>
+        <div class="widget-body">
+	        <div class="table-responsive">
+		        <table class="table table-bordered"  style="text-align: center;">
+				<thead>
+					<tr>
+					<th data-field="name" style="" tabindex="0">
+							<div class="th-inner" style="text-align: center;">
+								Code
+							</div>
+							<div class="fht-cell"></div>
+						</th>
+						<th data-field="name" style="" tabindex="0">
+							<div class="th-inner" style="text-align: center;">
+								Name
+							</div>
+							<div class="fht-cell"></div>
+						</th>
+						<th data-field="stargazers_count" style="" tabindex="0">
+							<div class="th-inner" style="text-align: center;">
+								Description
+							</div>
+							<div class="fht-cell"></div>
+						</th>
+						<th data-field="forks_count" style="" tabindex="0">
+							<div class="th-inner" style="text-align: center;">
+								Type
+							</div>
+							<div class="fht-cell"></div>
+						</th>
+						<th style="" tabindex="0">
+							<div class="th-inner" style="text-align: center;">
+								Stock
+							</div>
+							<div class="fht-cell"></div>
+						</th>
+						<th style="" tabindex="0">
+							<div class="th-inner" style="text-align: center;">
+								Price
+							</div>
+							<div class="fht-cell"></div>
+						</th>
+						<th style="" tabindex="0">
+							<div class="th-inner" style="text-align: center;">
+								Comission
+							</div>
+							<div class="fht-cell"></div>
+						</th>
+						<th style="" tabindex="0">
+							<div class="th-inner" style="text-align: center;">
+								Partial Price
+							</div>
+							<div class="fht-cell"></div>
+						</th>
+						<th style="" tabindex="0">
+							<div class="th-inner" style="text-align: center;">
+								Action
+							</div>
+							<div class="fht-cell"></div>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+				 <% @products.each do |product| %>
+				 	<tr>
+				 		<td>
+				 			<%= product.product_code %>
+				 		</td>
+				 		<td>
+				 			<%= product.name %>
+				 		</td>
+				 		<td><%= product.description %></td>
+				 		<td>
+				 		<% if product.type == 'items' %>
+				 			<span class="badge bg-success-contrast color-success px-3"><%= product.type %></span>
+				 		<% else %>
+				 			<span class="badge bg-primary-contrast color-primary px-3"><%= product.type %></span>
+				 		<% end %>
+				 		</td>
+				 		<td><%= product.stock %></td>
+				 		<td>RM<%= product.price %></td>
+				 		<td>RM<%= product.comission %></td>
+				 		<td>
+				 		<% if product.partial_price == nil %>
+				 			Not available
+				 		<% else %>
+				 			<%= product.partial_price %>
+				 		<% end %>	
+				 		</td>
+				 		<td><button class="btn btn-xs btn-outline-primary ripple">Update</button> <button class="btn btn-xs btn-outline-danger ripple">Delete</button></td>
+				 	</tr>
+				 	<% end %>
+					<tr class="no-records-found">
+						<td colspan="9"><%= page_entries_info @products %></td>
+					</tr>
+				</tbody>
+			</table>
+			<%= paginate @products %>
+	        	
+	        </div>
+        
+        </div>
+    </div>
+</div>

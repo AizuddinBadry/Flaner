@@ -1,5 +1,6 @@
 class Product
   include Mongoid::Document
+  include Mongoid::Timestamps
   field :user, :type => BSON::ObjectId 
   field :product_code,   type: String
   field :name,   type: String

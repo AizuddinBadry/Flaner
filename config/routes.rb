@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 	    # Product Module
 	    get '/product' => "products#index"
 	    get '/product/new' => "products#new"
+	    post '/product/new' => "products#create"
 
 	    # Form Module
 	    get '/form' => "users#formIndex"

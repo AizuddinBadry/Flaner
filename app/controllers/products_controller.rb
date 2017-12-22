@@ -2,10 +2,10 @@ class ProductsController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
+		@products = Product.page(params[:page]).per(10).where(user: current_user.id)
 	end
 
 	def new
-		@product = Product.new
 	end
 
 	def create
