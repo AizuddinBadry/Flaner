@@ -17,6 +17,11 @@ Rails.application.routes.draw do
 	    get '/form/new' => "users#newForm"
 	    post '/form/new/product' => "users#xform"
 
+	    #React API
+			get '/api/user/product/list' => "products#user_product_list"
+			get '/api/user/form/list' => "forms#get_form_list"
+			post '/api/user/form/new' => "forms#create"
+
 	    # Sign out
 	    delete '/users/sign_out' => "devise/sessions#destroy"
   	end

@@ -17,10 +17,13 @@
     "react-chartjs-2": "^2.6.4",
     "react-dom": "^16.2.0",
     "react-draft-wysiwyg": "^1.12.0",
+    "react-form": "^2.15.0",
     "react-on-rails": "^10.0.2"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.9.7"
   },
-  "scripts": { "postinstall": "cd client && npm install" }
+  "scripts": {
+    "postinstall": "cd client && npm install"
+  }
 }

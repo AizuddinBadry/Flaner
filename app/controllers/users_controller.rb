@@ -6,23 +6,10 @@ class UsersController < ApplicationController
   end
 
   def formIndex
-    @user = current_user
+    @forms = Form.page(params[:page]).per(10).where(user: current_user.id)
   end
 
   def newForm
-    @user = current_user
-  end
-
-  def xform
-    @name_add = ['aizuddin', 'azihan']
-    @kind_add = ['Text', 'Email']
-    @value = ['aizuddin', 'azihan']
-   form = Xform.new(:name=>'test form',:user => current_user.id)
-   form.form_field << FormField.new(:name => @name_add,:kind=> @kind_add, :value => @value)
-   if form.save
-   		render json: form
-   else
-   end
   end
 
   private

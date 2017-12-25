@@ -11,9 +11,15 @@ class ProductsController < ApplicationController
 	def create
 		@product = Product.new(product_params)
 		if @product.save
-			redirect_to action: "index"
+			redirect_to '/form'
 		else
 		end
+	end
+
+	#React API Endpoint
+	def user_product_list
+		@products = Product.where(user: current_user).all
+		render json: @products
 	end
 	
 	private

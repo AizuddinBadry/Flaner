@@ -86,7 +86,13 @@
 				 			<span class="badge bg-primary-contrast color-primary px-3"><%= product.type %></span>
 				 		<% end %>
 				 		</td>
-				 		<td><%= product.stock %></td>
+				 		<td>
+				 		<% if product.stock == nil %>
+				 			Not available
+				 		<% else %>
+				 			<%= product.stock %>
+				 		<% end %>	
+				 		</td>
 				 		<td>RM<%= product.price %></td>
 				 		<td>RM<%= product.comission %></td>
 				 		<td>

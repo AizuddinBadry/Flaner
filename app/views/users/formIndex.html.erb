@@ -1,60 +1,87 @@
-<div class="row page-titles">
-	<div class="col-md-5 align-self-center">
-		<h3 class="text-themecolor">Borang</h3>
+<div class="row page-title clearfix">
+	<div class="page-title-left">
+		<h6 class="page-title-heading mr-0 mr-r-5">Form Overview</h6>
 	</div>
 </div>
-<div class="row">
-	<div class="col-lg-12">
-		<p>
-	   	<%= link_to form_new_path do %>
-	   	<button type="button" class="btn btn-info btn-lg">
-		<i class="fa fa-plus" style="font-size: 20px"></i>
-			Tambah Borang 
-		</button>
-		<% end %>
-		</p>
-	</div>
-	<div class="col-lg-12">
-		<div class="card">
-			<div class="card-header">
-				<h4 class="card-title m-b-0">Senarai Borang</h4>
+<div class="widget-holder widget-sm widget-border-radius col-md-12">
+	<div class="widget-bg">
+		<div class="widget-heading bg-purple">
+			<span class="widget-title my-0 color-white fs-12 fw-600">Product List</span>
+			<i class="widget-heading-icon feather feather-box"></i>
+		</div>
+		<div class="widget-body">
+			<div class="table-responsive">
+				<table class="table table-bordered" style="text-align: center;">
+					<thead>
+						<tr>
+							<th data-field="name" style="" tabindex="0">
+								<div class="th-inner" style="text-align: center;">
+									No.
+								</div>
+								<div class="fht-cell"></div>
+							</th>
+							<th data-field="name" style="" tabindex="0">
+								<div class="th-inner" style="text-align: center;">
+									Name
+								</div>
+								<div class="fht-cell"></div>
+							</th>
+							<th style="" tabindex="0">
+								<div class="th-inner" style="text-align: center;">
+									Type
+								</div>
+								<div class="fht-cell"></div>
+							</th>
+							<th style="" tabindex="0">
+								<div class="th-inner" style="text-align: center;">
+									Form URL
+								</div>
+								<div class="fht-cell"></div>
+							</th>
+							<th style="" tabindex="0">
+								<div class="th-inner" style="text-align: center;">
+									Action
+								</div>
+								<div class="fht-cell"></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tbody>
+							<% @forms.each_with_index do |form, key| %>
+								<tr>
+									<td>
+										<%= key + 1 %>
+									</td>
+									<td>
+										<%= form.title %>
+									</td>
+									<td>
+										<% if form.type == 'product' %>
+											<span class="badge bg-success-contrast color-success px-3"><%= form.type %></span>
+										<% else %>
+											<span class="badge bg-primary-contrast color-primary px-3"><%= form.type %></span>
+										<% end %>
+										</td>
+									<td>url</td>
+									<td>
+										<button class="btn btn-xs btn-outline-primary ripple">Update</button>
+										<button class="btn btn-xs btn-outline-danger ripple">Delete</button>
+									</td>
+								</tr>
+								<% end %>
+									<tr class="no-records-found">
+										<td colspan="9">
+											<%= page_entries_info @forms %>
+										</td>
+									</tr>
+						</tbody>
+					</tbody>
+				</table>
+
+
 			</div>
-			<div class="card-body">
-				<div class="table-responsive"> 
-					<div class="table-responsive"> 
-						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th>Kod Borang</th>
-									<th>Tajuk Borang</th>
-									<th>Penerangan</th>
-									<th>URL</th>
-									<th>Status</th>
-									<th>Tindakan</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>Borang Makan</td>
-									<td>Borang makan</td>
-									<td><a href="http://bizrev.my">http://bizrev.my</a></td>
-									<td><span class="label label-success">Active</span></td>
-									<td><button type="button" class="btn btn-success">View</button> <button type="button" class="btn btn-primary">Edit</button> <button type="button" class="btn btn-danger">Delete</button></td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>Borang minum</td>
-									<td>Borang untuk minum</td>
-									<td><a href="http://bizrev.my">http://bizrev.my</a></td>
-									<td><span class="label label-danger">Disable</span></td>
-									<td><button type="button" class="btn btn-success">View</button> <button type="button" class="btn btn-primary">Edit</button> <button type="button" class="btn btn-danger">Delete</button></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
+
 		</div>
 	</div>
 </div>
