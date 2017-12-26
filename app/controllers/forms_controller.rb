@@ -19,14 +19,14 @@ class FormsController < ApplicationController
 	end
 
 	def get_form_list
-		@forms = Form.all
+		@forms = Form.where(user: current_user.id).all
 		render json: @forms
 	end
 
 	private
 
 	def form_params
-		params.permit(:title, :form, :description, :productID, :type)
+		params.permit(:title, :form, :description, :productID, :type, :url)
 	end
 
 end

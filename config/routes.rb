@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :payments
   	root :to => "home#index"
   	devise_for :users
   	get '/dashboard' => "users#welcome", as: :user_root
@@ -15,7 +16,10 @@ Rails.application.routes.draw do
 	    # Form Module
 	    get '/form' => "users#formIndex"
 	    get '/form/new' => "users#newForm"
-	    post '/form/new/product' => "users#xform"
+			post '/form/new/product' => "users#xform"
+			
+			# Payment Module
+			get '/pay' => "payments#index"
 
 	    #React API
 			get '/api/user/product/list' => "products#user_product_list"

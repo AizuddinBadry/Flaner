@@ -4,6 +4,7 @@ class Form
   field :title,   type: String
   field :description,   type: String
   field :user, type: BSON::ObjectId
+  field :url, type: String
   field :billplz, type: Boolean, default: false
   field :molpay, type: Boolean, default: false
   field :allowCDM, type: Boolean, default: false

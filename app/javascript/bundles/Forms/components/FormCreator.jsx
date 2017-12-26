@@ -60,7 +60,9 @@ export default class FormCreator extends Component {
       productsList: [],
       product: [],
       addProducts: false,
-      allowCDM: false
+      allowCDM: false,
+      enableProductDescription: false,
+      productCode: ''
     };
   }
 
@@ -93,7 +95,8 @@ export default class FormCreator extends Component {
           convertToRaw(self.state.editorState.getCurrentContent())
         ),
         products: self.state.product,
-        type: 'product'
+        type: 'product',
+        url: 'https://micropay.my/pay/' + self.state.productCode
       })
       .then(function(response) {
         console.log(response);
@@ -161,7 +164,9 @@ export default class FormCreator extends Component {
       editorData,
       productsList,
       product,
-      allowCDM
+      allowCDM,
+      enableProductDescription,
+      productCode
     } = this.state;
 
     const product_list = productsList.map((index, i) => (
@@ -198,6 +203,20 @@ export default class FormCreator extends Component {
             <div class="card-body">
               <div class="box-body">
                 <div class="form-group">
+                  <label for="title">Code</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="productCode"
+                    value={productCode}
+                    onChange={this.handleChanges}
+                  />
+                  <label>Form url: </label>{' '}
+                  <a href={'https://micropay.my/pay/' + productCode}>
+                    https://micropay.my/pay/{productCode}{' '}
+                  </a>
+                </div>
+                <div class="form-group">
                   <label for="title">Title</label>
                   <input
                     type="text"
@@ -208,13 +227,30 @@ export default class FormCreator extends Component {
                   />
                 </div>
                 <div class="form-group">
-                  <label for="title">Description</label>
-                  <Editor
-                    editorState={editorState}
-                    wrapperClassName="demo-wrapper"
-                    editorClassName="demo-editor"
-                    onEditorStateChange={this.onEditorStateChange}
-                  />
+                  <div class="checkbox checkbox-circle checkbox-color-scheme">
+                    <label class="checkbox-checked">
+                      <input
+                        type="checkbox"
+                        name="enableProductDescription"
+                        value={enableProductDescription}
+                        onChange={this.handleChanges}
+                      />{' '}
+                      <span class="label-text">Product description</span>
+                    </label>
+                  </div>
+                  {enableProductDescription ? (
+                    <div>
+                      <label for="title">Description</label>
+                      <Editor
+                        editorState={editorState}
+                        wrapperClassName="demo-wrapper"
+                        editorClassName="demo-editor"
+                        onEditorStateChange={this.onEditorStateChange}
+                      />
+                    </div>
+                  ) : (
+                    ''
+                  )}
                 </div>
 
                 <div class="form-group">
@@ -280,13 +316,18 @@ export default class FormCreator extends Component {
                 <h2>{title}</h2>
                 <hr />
               </center>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: draftToHtml(
-                    convertToRaw(editorState.getCurrentContent())
-                  )
-                }}
-              />
+              {enableProductDescription ? (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: draftToHtml(
+                      convertToRaw(editorState.getCurrentContent())
+                    )
+                  }}
+                />
+              ) : (
+                ''
+              )}
+
               <ProductListing products={product} />
               <div class="col-md-12 widget-holder">
                 <div class="widget-bg">

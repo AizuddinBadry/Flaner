@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Payments Processing</title>
+    <link href="//cdn.muicss.com/mui-0.9.35/css/mui.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <%= stylesheet_link_tag    'payment_assets/payments', media: 'all', 'data-turbolinks-track': 'true' %>
+    <%= javascript_pack_tag 'flaner-bundle' %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
